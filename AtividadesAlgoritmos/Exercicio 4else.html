@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4else</title>
+</head>
+<body>
+    Insira sua frequência:<br>
+    <input type="number" id="freq"><br>
+    <button onclick="chamaImagem()">Analisar frequência</button>
+    <div id="divImagem"></div>
+</body>
+</html>
+<script>
+    
+    function chamaImagem(){
+    var frequencia = Number(freq.value);
+    if (frequencia<50){
+     divImagem.innerHTML = `<img src="https://img.freepik.com/vetores-gratis/turistas-prontos-para-o-feriado_23-2149059981.jpg?q=10&h=200">`
+    }
+    else{
+     divImagem.innerHTML = `<img src= "https://blog.redebatista.edu.br/wp-content/uploads/2018/12/edd.jpg">`
+    }
+    }
+</script>

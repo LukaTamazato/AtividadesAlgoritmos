@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7 if</title>
+</head>
+<body>
+    Digite o nome do passageiro:
+    <input type="text" id="nomePassageiro"><br>
+    Digite a distancia do trajeto(km):
+    <input type="number" id="distanciaTrajeto"><br>
+    Digite a bandeira da corrida:
+    <input type="number" min="1" max="3" id="bandeiraCorrida"><br>
+    Digite o horario da corrida:
+    <input type="number" min="0" max="23" id="horaCorrida"><br>
+    <button onclick="calculaCorrida()">
+        Calcular corrida
+    </button>
+    <span id="spanResposta"></span>
+</body>
+</html>
+<script>
+    function calculaCorrida(){
+    var precoInicial = distanciaTrajeto.value * 1.25;
+    var precoFinal;
+    var horarioCorrida = horaCorrida.value;
+    if (bandeiraCorrida.value == 1){
+        if (horarioCorrida <= 6){
+        precoFinal = precoInicial + precoInicial * 0.05
+        }
+            if (horarioCorrida <= 12){
+            precoFinal =  precoInicial + precoInicial* 0.1
+            }
+                if (horarioCorrida <= 23){
+                    precoFinal = precoInicial + precoInicial* 0.15 
+                }
+    }
+
+    if (bandeiraCorrida.value == 2){
+        if (horarioCorrida <= 6){
+        precoFinal = precoInicial + precoInicial* 0.1
+        }
+            if (horarioCorrida <= 12){
+            precoFinal =  precoInicial + precoInicial* 0.2
+            }
+                if (horarioCorrida <= 23){
+                    precoFinal = precoInicial + precoInicial* 0.3  
+                }
+    }
+    if (bandeiraCorrida.value == 3){
+        if (horarioCorrida <= 6){
+        precoFinal =  precoInicial + precoInicial* 0.25
+        }
+            if (horarioCorrida <= 12){
+            precoFinal =  precoInicial + precoInicial* 0.3
+            }
+                if (horarioCorrida <= 23){
+                    precoFinal =  precoInicial + precoInicial* 0.45
+                }
+    }
+
+    spanResposta.innerHTML = `<br> Olá ${nomePassageiro.value} Sua corrida, será na bandeira
+     ${bandeiraCorrida.value} , percorrerá ${distanciaTrajeto.value} km 
+     e o total da corrida será de ${precoFinal}`
+    }
+</script>
+

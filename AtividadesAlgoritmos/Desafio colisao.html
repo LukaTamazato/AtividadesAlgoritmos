@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio colisão</title>
+</head>
+<body>
+    Defina o primeiro ponto do Objeto 1:
+    <input type="number" id="pt1obj1"><br>
+    Defina o segundo ponto do Objeto 1:
+    <input type="number" id="pt2obj1"><br>
+    Defina o terceiro ponto do Objeto 1:
+    <input type="number" id="pt3obj1"><br>
+    Defina o quarto ponto do Objeto 1:
+    <input type="number" id="pt4obj1"><br>
+    Defina o primeiro ponto do Objeto 2:
+    <input type="number" id="pt1obj2"><br>
+    Defina o segundo ponto do Objeto 2:
+    <input type="number" id="pt2obj2"><br>
+    Defina o terceiro ponto do Objeto 2:
+    <input type="number" id="pt3obj2"><br>
+    Defina o quarto ponto do Objeto 2:
+    <input type="number" id="pt4obj2"><br>
+    <button onclick="calculaColisao()">Calcular colisão</button>
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+function calculaColisao(){
+    var ponto1objt1 = Number(pt1obj1.value)
+    var ponto2objt1 = Number(pt2obj1.value)
+    var ponto3objt1 = Number(pt3obj1.value)
+    var ponto4objt1 = Number(pt4obj1.value)
+    var ponto1objt2 = Number(pt1obj2.value)
+    var ponto2objt2 = Number(pt2obj2.value)
+    var ponto3objt2 = Number(pt3obj2.value)
+    var ponto4objt2 = Number(pt4obj2.value)
+    var colisão = 0;
+    var resultado
+    
+ // Validação Igualdade{
+  //Ponto 1 Objeto 1
+
+     if (ponto1objt1 == ponto1objt2){
+         colisão = 1;
+     }
+     if (ponto1objt1 == ponto2objt2){
+         colisão = 1;
+     }
+     if (ponto1objt1 == ponto3objt2){
+         colisão = 1;
+     }
+     if (ponto1objt1 == ponto4objt2){
+         colisão = 1;
+     }
+ // Ponto 2 Objeto 1
+     if (ponto2objt1 == ponto1objt2){
+         colisão = 1;
+     }
+     if (ponto2objt1 == ponto2objt2){
+         colisão = 1;
+     }
+     if (ponto2objt1 == ponto3objt2){
+         colisão = 1;
+     }
+     if (ponto2objt1 == ponto4objt2){
+         colisão = 1;
+     }
+ // Ponto 3 Objeto 1
+     if (ponto3objt1 == ponto1objt2){
+         colisão = 1;
+     }
+     if (ponto3objt1 == ponto2objt2){
+         colisão = 1;
+     }
+     if (ponto3objt1 == ponto3objt2){
+         colisão = 1;
+     }
+     if (ponto3objt1 == ponto4objt2){
+         colisão = 1;
+     }
+ // Ponto 4 Objeto 1
+     if (ponto4objt1 == ponto1objt2){
+         colisão = 1;
+     }
+     if (ponto4objt1 == ponto2objt2){
+         colisão = 1;
+     }
+     if (ponto4objt1 == ponto3objt2){
+         colisão = 1;
+     }
+     if (ponto4objt1 == ponto4objt2){
+         colisão = 1;
+     }
+ //}
+    // Caso objeto 1 maior
+
+        // Ponto 1 Objeto 1
+        if (ponto1objt1 < ponto1objt2){
+            resultado = ponto1objt2 - ponto1objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto1objt1 < ponto2objt2){
+            resultado = ponto2objt2 - ponto1objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto1objt1 < ponto3objt2){
+            resultado = ponto3objt2 - ponto1objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto1objt1 < ponto4objt2){
+            resultado = ponto4objt2 - ponto1objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+    // Ponto 2 Objeto 1
+    if (ponto2objt1 < ponto1objt2){
+            resultado = ponto1objt2 - ponto2objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto2objt1 < ponto2objt2){
+            resultado = ponto2objt2 - ponto2objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto2objt1 < ponto3objt2){
+            resultado = ponto3objt2 - ponto2objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto2objt1 < ponto4objt2){
+            resultado = ponto4objt2 - ponto2objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+    // Ponto 3 Objeto 1
+        if (ponto3objt1 < ponto1objt2){
+            resultado = ponto1objt2 - ponto3objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto3objt1 < ponto2objt2){
+            resultado = ponto2objt2 - ponto3objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto3objt1 < ponto3objt2){
+            resultado = ponto3objt2 - ponto3objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto3objt1 < ponto4objt2){
+            resultado = ponto4objt2- ponto3objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        // Ponto 4 objeto 1 
+        if (ponto4objt1 < ponto1objt2){
+            resultado = ponto1objt2 - ponto4objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto4objt1 < ponto2objt2){
+            resultado =ponto2objt2- ponto4objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto4objt1 < ponto3objt2){
+            resultado =ponto3objt2- ponto4objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto4objt1 < ponto4objt2){
+            resultado =ponto4objt2- ponto4objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+    //}
+// Caso objeto 2 maior
+
+        // Ponto 1 Objeto 2
+        if (ponto1objt2 < ponto1objt1){
+            resultado = ponto1objt1 - ponto1objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto1objt1 < ponto2objt1){
+            resultado = ponto2objt1 - ponto1objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto1objt2 < ponto3objt1){
+            resultado = ponto3objt1 - ponto1objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto1objt1 < ponto4objt1){
+            resultado = ponto4objt1 - ponto1objt1;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+    // Ponto 2 Objeto 2
+    if (ponto2objt2 < ponto1objt1){
+            resultado = ponto1objt1 - ponto2objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto2objt2 < ponto2objt1){
+            resultado = ponto2objt1 - ponto2objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto2objt2 < ponto3objt1){
+            resultado = ponto3objt1 - ponto2objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto2objt2 < ponto4objt1){
+            resultado = ponto4objt1 - ponto2objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+    // Ponto 3 Objeto 2
+        if (ponto3objt2 < ponto1objt1){
+            resultado = ponto1objt1 - ponto3objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto3objt2 < ponto2objt1){
+            resultado = ponto2objt1 - ponto3objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto3objt2 < ponto3objt1){
+            resultado = ponto3objt1 - ponto3objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto3objt2 < ponto4objt1){
+            resultado = ponto4objt1- ponto3objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        // Ponto 4 objeto 2 
+        if (ponto4objt2 < ponto1objt1){
+            resultado = ponto1objt1 - ponto4objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto4objt2 < ponto2objt1){
+            resultado =ponto2objt1- ponto4objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto4objt2 < ponto3objt1){
+            resultado =ponto3objt1- ponto4objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+        if (ponto4objt2 < ponto4objt1){
+            resultado =ponto4objt1- ponto4objt2;
+            if (resultado<=0){
+                colisão = 1;
+            } 
+        }
+    //}
+
+// Impressão do resultado
+    divResultado.innerHTML = `Saida final colisão:(1 = positiva/ 0 = negativa) <br> ${colisão}`
+}
+
+</script> 

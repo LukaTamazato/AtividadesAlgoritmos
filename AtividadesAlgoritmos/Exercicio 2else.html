@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2else</title>
+</head>
+<body>
+    Qual o saldo atual da sua conta?
+    <input type="number" id="saldo"><br>
+    Qual o seu valor de débito?
+    <input type="number" id="debit"><br>
+    <button onclick="calculoSaldo()">Analisar conta</button>
+    <div id="divResult"></div>
+    
+</body>
+</html>
+<script>
+    function calculoSaldo(){
+    var saldoAtual = saldo.value - debit.value;
+    if (saldoAtual < 0){
+    divResult.innerHTML=`<b><font color="red">O saldo atual da conta corrente é ${saldoAtual}</font></b>`
+    }
+    else {
+    divResult.innerHTML=`<i><font color="blue"> O saldo atual da conta corrente é ${saldoAtual}</font></i>`
+    }
+    }
+</script>

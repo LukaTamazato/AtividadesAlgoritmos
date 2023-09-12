@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1else</title>
+</head>
+<body>
+    Digite seu nome:<br>
+    <input type="text" id="nome"> <br>
+    Digite sua idade:<br>
+    <input type="number" id="idade"><br>
+    <button onclick="calcularIdade()">Avaliar aluno</button>
+    <div id="divResult"></div>
+</body>
+</html>
+<script>
+    function calcularIdade(){
+        if(idade.value >= 18){
+            divResult.innerHTML =`${nome.value} vamos tirar a CNH?`
+        }
+        else {
+            divResult.innerHTML = `${nome.value} vai jogar PlayStation!`
+        }
+    }
+</script>

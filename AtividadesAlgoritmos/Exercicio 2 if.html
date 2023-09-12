@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2 if</title>
+</head>
+<body>
+    Insira a quantidade de latinhas de refrigerante bebidas por dia:
+    <input type="number" id="qntdRefri">
+    <button onclick="calculaRefris()">
+        Quantos refris?
+    </button>
+    <div id="divResposta">
+    </div>
+    <div id="divAlerta"></div>
+</body>
+</html>
+<script>
+    function calculaRefris(){
+     var totalRefriAno = qntdRefri.value * 365;
+     divResposta.innerHTML = `Sua média anual de consumo de refrigerante será ${totalRefriAno} latinhas`;
+        if (totalRefriAno > 500){
+           divAlerta.innerHTML = `Cuidado com a diabetes!`;
+         }
+
+    }
+</script>

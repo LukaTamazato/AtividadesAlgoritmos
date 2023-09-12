@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3else</title>
+</head>
+<body>
+    Quantos chocolates você está comprando?<br>
+    <input type="number" id="qntdChocolate"><br>
+    <button onclick="calculaChocolate()">Compra</button>
+    <div id="divResposta"></div>
+</body>
+</html>
+<script>
+    function calculaChocolate(){
+    var precoTotal;
+    var chocolate = Number(qntdChocolate.value);
+    if(chocolate<12){
+    precoTotal = chocolate * 3
+    }
+    else{
+    precoTotal = chocolate * 2.5
+    }
+    divResposta.innerHTML = `O valor da sua compra foi de ${precoTotal}`;
+}
+</script>

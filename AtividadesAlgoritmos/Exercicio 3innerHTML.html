@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3 InnerHTML</title>
+</head>
+<body>
+    Entre com um número, para ver sua tabuada:
+    <input type="text" id="input_tabuada">
+    <button onclick="mostrarTabuada()">
+        Ver tabuada
+    </button>
+    <div id="div_tabuada">
+    </div>
+</body>
+</html>
+<script>
+    function mostrarTabuada() {
+        var valor = input_tabuada.value
+        div_tabuada.innerHTML = `
+            ${valor}x1 = ${valor * 1}<br>
+            ${valor}x2 = ${valor * 2}<br>
+            ${valor}x3 = ${valor * 3}<br>
+            ${valor}x4 = ${valor * 4}<br>
+            ${valor}x5 = ${valor * 5}<br>
+            ${valor}x6 = ${valor * 6}<br>
+            ${valor}x7 = ${valor * 7}<br>
+            ${valor}x8 = ${valor * 8}<br>
+            ${valor}x9 = ${valor * 9}
+        `
+    }
+</script>

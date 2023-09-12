@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4 if</title>
+</head>
+<body>
+    Qual o valor da pizza?
+    <input type="number" id="precoPizza"><br>
+    Quantos amigos estão presentes?
+    <input type="number" id="qntdAmigos">
+    <button onclick="calculaPizzaIndiv()">
+        Rola Pizza?
+    </button>
+    <div id="divMensagem">
+    </div>
+</body>
+</html>
+<script>
+    function calculaPizzaIndiv(){
+    var Pizza = Number(precoPizza.value)
+    var Amigos = Number(qntdAmigos.value)
+    var result = Pizza/Amigos
+        divMensagem.innerHTML = `Cada amigo vai pagar R$ ${result} pela pizza <br>` 
+    if (result > 20) {
+        divMensagem.innerHTML += `<br>Deu ruim! Pizza muito cara!`
+    }
+    }
+</script>

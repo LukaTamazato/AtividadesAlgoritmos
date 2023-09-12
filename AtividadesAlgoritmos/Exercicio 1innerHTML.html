@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1 InnerHTML</title>
+</head>
+<body> 
+<Div id="divInput">
+    Insira quantas horas você dormiu
+    <input type="number" id="tempoSono">
+</Div>
+<div id="divBotao">
+    <button onclick="divisaoSono()">
+        Calcular Sono
+    </button>
+</div>
+<div id="divResultado">
+</div>
+</body>
+</html>
+<script>
+ function divisaoSono(){
+    var sono = tempoSono.value
+    divResultado.innerHTML = `Ao dormir <u>${sono}</u> horas, você dormiu: <br>
+    <u>${sono*0.05}</u> horas na fase 1 <br>
+    <u>${sono*0.45}</u> horas na fase <b>2</b> <br>
+    <u>${sono*0.3}</u> horas na fase <b>3</b> <br>
+    <u>${sono*0.2}</u> horas na fase <b>REM</b> <br>`
+ }   
+</script>

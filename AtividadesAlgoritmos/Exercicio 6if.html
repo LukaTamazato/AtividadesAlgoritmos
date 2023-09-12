@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6 if</title>
+</head>
+<body>
+    Insira o valor da renda familiar do cliente:<br>
+    <input type="number" id="rendaFamiliar"> <br>
+    Insira o valor da prestação nescessária do cliente:<br>
+    <input type="number" id="prestacao"><br>
+    <button onclick="verificacao()">
+        Verificar financiamento
+    </button>
+    <div id="divMensagem">
+    </div>
+    <div id="divAlerta">
+    </div>
+</body>
+</html>
+<script>
+    function verificacao(){
+        var renda = Number(rendaFamiliar.value);
+        var presta = Number(prestacao.value);
+        var result = (presta/renda)*100;
+        divMensagem.innerHTML = `A prestação corresponde a ${result}% da renda familiar`;
+        if (result>30){
+            divAlerta.innerHTML = `<font color="red"><b>Será necessário complementar a renda familiar<b></font>`
+        }
+    }
+</script>

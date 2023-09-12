@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite seu nome:
+    <input type="text" id="nome_usuario">
+    Digite sua idade:
+    <input type="text" id="idade_usuario">
+
+    <button onclick="cumprimentarCompleto()">
+        Cumprimentar Completo
+    </button>
+</body>
+</html>
+<script>
+    function cumprimentarCompleto() {
+        alert("Olá, " + nome_usuario.value + " você tem " + idade_usuario.value + " anos")
+    }
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5 if</title>
+</head>
+<body>
+    Insira seu consumo de energia mensal(KWh):
+    <input type="text" id="consumoEnergia">
+    <button onclick="calculaEnergia()">
+    Calcular conta de luz
+    </button>
+</body>
+</html>
+<script>
+    function calculaEnergia(){
+    var custoMensal = consumoEnergia.value*0.85
+    if (consumoEnergia.value<100){
+         custoMensal = custoMensal-(custoMensal*0.1)
+
+    }
+    alert(`O valor total da sua conta a se pagar é: ${custoMensal}`)
+    }
+</script>

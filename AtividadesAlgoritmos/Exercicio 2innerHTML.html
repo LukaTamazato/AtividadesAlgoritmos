@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2 InnerHTML</title>
+</head>
+<body>
+    <Div id="divTexto">
+        Quantos votos o canditado a teve na eleição?
+        <input type="number" id="votoA"><br>
+        Quantos votos o canditado b teve na eleição?
+        <input type="number" id="votoB"><br>
+        Quantos votos brancos tiveram na eleição?
+        <input type="number" id="votoBranco"><br>
+        Quantos votos nulos tiveram na eleição?
+        <input type="number" id="votoNulo">
+    </Div>
+    <Div id="divBotao">
+    <button onclick="calculaVotos()">
+        Resultado da Eleição
+    </button>
+    </Div>
+    <div id="divResposta"></div>
+</body>
+</html>
+<script>
+    function calculaVotos(){
+        var voto1 = Number(votoA.value)
+        var voto2 = Number(votoB.value)
+        var votoInvalido = Number(votoNulo.value)+Number(votoBranco.value)
+        var votoTotal = voto1+voto2+votoInvalido
+        divResposta.innerHTML = `Total de votos: <u>${votoTotal}</u> <br>
+    Candidato A: ${(voto1*100)/votoTotal}% (${voto1})<br>
+    Candidato B: ${(voto2*100)/votoTotal}% (${voto2})<br>
+    Inválidos: ${(votoInvalido*100)/votoTotal}% (${votoInvalido})<br>`
+
+    }
+</script>

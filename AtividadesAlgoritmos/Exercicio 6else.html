@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6else</title>
+</head>
+<body>
+    Qual a temperatura atual do ambiente?
+    <input type="text" id="temperatura">
+    <button onclick="calcularTemperatura()">Verificar clima</button>
+    <div id="divResultado"></div>
+
+    </body>
+</html>
+<script>
+    function calcularTemperatura(){
+    if (temperatura.value<10){
+    divResultado.innerHTML = `<img src="https://blog.ifope.com.br/wp-content/uploads/2020/09/conservacao-de-alimentos.jpeg"/>`
+    }
+    else{
+    divResultado.innerHTML =`<img src="https://pronatec.pro.br/wp-content/uploads/2023/07/moldy-food.jpg"/>`
+    }
+    }
+</script>

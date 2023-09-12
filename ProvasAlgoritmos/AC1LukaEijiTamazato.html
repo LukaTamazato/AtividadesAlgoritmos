@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe a quantidade de energia consumida nesse mês(kWh)<br>
+    <input type="number" id="consumoEnergia"><br>
+    Informe a cor da bandeira tarifaria de energia("vermelha", "amarela" ou "verde")<br>
+    <input type="text" id="corBandeira"><br>
+    Informe o volume de água consumido(L)<br>
+    <input type="number" id="volumeAgua"><br>
+    Informe a quantidade de vazementos informados na casa<br>
+    <input type="number" id="qntdVazamento"><br>
+    Informe o volume de gás consumido(L)<br>
+    <input type="number" id="consumoGas"><br>
+    Informe o valor base do plano de internet.<br>
+    <input type="number" id="valorInternet"><br>
+       Informe se há uma linha telefônica vinculada ao plano de internet(sim ou nao)<br>
+    <input type="text"  id="linhaTelefonica"><br>
+    <button onclick="calcularDespesas()">
+        Calcular Despesas Fixas
+    </button>
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+    function calcularDespesas(){
+        var energia = Number(consumoEnergia.value);
+        var bandeira = corBandeira.value;
+        var agua = Number(volumeAgua.value);
+        var vazamento = Number(qntdVazamento.value);
+        var gas = Number(consumoGas.value);
+        var internet = Number(valorInternet.value);
+        var telefone = linhaTelefonica.value;
+        var contaEnergia
+        var contaAgua
+        var contaGas
+        var contaTelefone
+
+
+// Calculo Energia
+        if (bandeira == "verde"){
+            contaEnergia = energia * 0.75
+        }
+        if (bandeira == "amarela"){
+            contaEnergia = energia * 0.9
+        }
+        if (bandeira == "vermelha"){
+            contaEnergia = energia * 1
+        }
+        if (consumoEnergia.value <= 50){
+            contaEnergia = contaEnergia - contaEnergia * 0.1
+        }
+// Calculo Água 
+        contaAgua = agua * 3.5
+        contaAgua = (10 * vazamento) + contaAgua
+// Calculo Gás
+        contaGas = gas * 2.5
+// Calculo Telefone
+        if (telefone == 'sim'){
+            contaTelefone = internet + (internet * 0.25);
+        }
+        else{
+        contaTelefone = internet;
+        }
+
+        divResultado.innerHTML = `Com o consumo de ${energia} kWh na bandeira ${bandeira}, a conta de energia totaliza R$ ${contaEnergia}.<br>
+
+Com o consumo de ${agua} litros de água contendo ${vazamento} vazamentos , a conta de água totaliza R$ ${contaAgua}.<br>
+
+Com o consumo de ${gas} litros de gás, a conta de gás totaliza R$ ${contaGas}.<br>
+
+Com um valor base de R$ ${internet} no plano de internet , a conta de internet/telefone totaliza R$${contaTelefone}.<br>
+
+Gasto total de despesas mensal: R$ ${contaEnergia + contaAgua + contaGas + contaTelefone}.<br> `
+
+}
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5else</title>
+</head>
+<body>
+    Insira a primeira nota:
+    <input type="number" id="nota1"><br>
+    Insira a segunda nota:
+    <input type="number" id="nota2"><br>
+    <button onclick="calculaMedia()">Verificar situação</button>
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+ function calculaMedia(){
+    var primeiraNota = Number(nota1.value);
+    var segundaNota = Number(nota2.value);
+    var media = (primeiraNota+segundaNota)/2; 
+    if(media<6){
+    divResultado.innerHTML = `Sua média foi ${media}, infelizmente não é o suficiente tente outra vez...`
+ }
+    else{
+    divResultado.innerHTML = `Sua média foi ${media},Parabéns você foi aprovado!`
+    }
+}
+</script>
