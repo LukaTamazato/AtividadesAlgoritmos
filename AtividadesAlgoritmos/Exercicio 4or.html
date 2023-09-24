@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4or</title>
+</head>
+<body>
+    Qual seu modo de pagamento?
+    <input type="text" id="iptFormaPgmt">
+    <button onclick="analisarPagamento()">Analisar compra</button>
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+    function analisarPagamento(){
+        var formaPgmt = iptFormaPgmt.value
+        
+        if (formaPgmt == "Dinheiro"||formaPgmt == "Cartão de débito"){
+            divResultado.innerHTML = "Você terá que pagar a vista";
+        }else if(formaPgmt == "Boleto"||formaPgmt == "Cartão de crédito"){
+            divResultado.innerHTML = "Pagamento poderá ser parcelado";
+        }
+    }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9&</title>
+</head>
+<body>
+    Insira a altura minima do intervalo de altura para pilotos:
+    <input type="number" id="inpAlturaInicial"><br>
+    Insira a altura maxima do intervalo de altura para pilotos:
+    <input type="number" id="inpAlturaFinal"><br>
+    Insira o nome do canditado:
+    <input type="text" id="inpNome"><br>
+    Insira a altura do canditado:
+    <input type="number" id="inpAlturaCandidato"><br>
+    <button onclick="calcularCandidatura()">Verificar Candidato</button>
+     <div id="divResultado"></div>
+</body>
+</html>
+<script>
+ function calcularCandidatura() {
+        var alturaInicial = Number(inpAlturaInicial.value);
+        var alturaFinal = Number(inpAlturaFinal.value);
+        var nomeCandidato = inpNome.value;
+        var alturaCandidato = Number(inpAlturaCandidato.value);
+
+        if (alturaInicial > 1 && alturaFinal > alturaInicial) {
+            if (alturaCandidato >= alturaInicial && alturaCandidato <= alturaFinal) {
+                divResultado.innerHTML += `O candidato ${nomeCandidato} com altura de ${alturaCandidato} participará do processo de seleção de piloto <br>`;
+            } else {
+                divResultado.innerHTML += ` Infelizmente o candidato ${nomeCandidato} com altura de ${alturaCandidato} não atende os requisitos <br>`;
+            }
+        } else {
+            alert("Houve um erro de preenchimento de seus dados!!");
+        }
+    }
+</script>

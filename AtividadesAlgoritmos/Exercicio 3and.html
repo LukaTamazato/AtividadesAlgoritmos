@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3&</title>
+</head>
+<body>
+    Insira a nota do aluno:
+    <input type="number" id="inpNota">
+    <button onclick="validarNota()">Avaliar aluno</button>
+</body>
+</html>
+<script>
+    function validarNota(){
+        var nota = Number(inpNota.value);
+        if (nota >= 0 && nota <= 10){
+            alert("Nota válida!" )
+        } else {
+            alert ("Onde já se viu nota menor que 0 e maior que 10?!")
+        }
+    }
+</script>

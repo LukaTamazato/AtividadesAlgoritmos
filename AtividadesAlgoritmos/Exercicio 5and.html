@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 5&</title>
+</head>
+<body>
+    Insira a nota do aluno que deseja calcular:
+    <input type="nota" id="inpNota">
+    <button onclick="calcularNota()">Avaliar aluno</button>
+</body>
+</html>
+<script>
+    function calcularNota(){
+        var nota = Number(inpNota.value)
+        if (nota<6){
+            alert("Aluno não aprovado");
+        }
+        if(nota>6 && nota<=8.5){
+            alert("Aluno comum e aprovado");
+        }
+        if(nota>8.5 && nota <= 10){
+            alert("Aluno Exemplar!")
+        }
+    }
+</script>
