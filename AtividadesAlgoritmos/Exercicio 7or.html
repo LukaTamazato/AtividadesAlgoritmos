@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de cansaço aprimorada do aluno SPTech.</title>
+</head>
+<body>
+    Meio de transporte:(Ônibus,Metrô,Carro,Bicicleta,Lotação)
+    <input type="text" id="inpMeioTransporte"><br>
+    Insira sua distancia da faculdade:
+    <input type="text" id="inpDistancia">Distância da faculdade (KM)<br>
+
+    <!-- Caio não gosta quando uso coisas que ele não ensinou :( 
+     <select  id="inpMeioTransporte">
+    <option value="Ônibus">Ônibus</option>
+    <option value="Metrô">Metrô</option>
+    <option value="Carro">Carro</option>
+    <option value="Bicicleta">Bicicleta</option>
+    <option value="Lotação">Lotação</option> -->
+
+    <button onclick="calcularTransporte()">Calcular cansaço</button>
+</body>
+</html>
+<script>
+    function calcularTransporte(){
+        var meioTransporte = inpMeioTransporte.value;
+        var distancia = Number(inpDistancia.value);
+        if (distancia <= 10){
+        if (meioTransporte == "Carro" ||meioTransporte == "Ônibus"|| meioTransporte == "Metrô"){
+            alert( "Tá tranks");
+        }else{
+            alert("É ... um pouco cansado ...")
+        }
+        }
+        if( distancia > 10){
+          if (meioTransporte == "Carro"){
+            alert("É ... um pouco cansado ...");
+          }else if (meioTransporte == "Metrô" || meioTransporte == "Ônibus"){
+            alert("Bem cansado ...");
+          }else if (meioTransporte == "Bicicleta"){
+            alert("Vish ... tá só o pó ...");
+          }
+        }
+    
+        // function calcularTransporte(){
+        // var meioTransporte = Number(inpMeioTransporte.value);
+        // if (meioTransporte == "3" || meioTransporte == "4"){
+        //     alert( "Tá tranquilo ...");
+        // }else if(meioTransporte == "1"|| meioTransporte == "5"){
+        //     alert("Vish ... vive cansado.");
+        // }else{
+        //     alert("Um pouco cansado");
+        // }
+    }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8|</title>
+</head>
+<body>
+    Insira o nome da empresa:
+    <input type="text" id="inpNomeEmpresa"><br>
+    Insira o valor da bolsa da empresa:
+    <input type="number" id="inpValorBolsa"><br>
+    Insira o valor do vale refeição da empresa:
+    <input type="number" id="inpValorVr"><br>
+    Insira o tempo de deslocamento até a SPTECH(min):
+    <input type="number" id="inpTempoAteSptech">
+    <button onclick="definirPreferencia()">É preferida?</button>
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+    function definirPreferencia(){
+    var nomeEmpresa = inpNomeEmpresa.value;
+    var valorBolsa = Number(inpValorBolsa.value);
+    var valorVr = Number(inpValorVr.value);
+    var tempoAteSptech = Number(inpTempoAteSptech.value);
+ 
+    if (valorBolsa>=1800||valorVr>=20||tempoAteSptech<=30){
+        divResultado.innerHTML = `A empresa ${nomeEmpresa} é uma de suas preferências`
+    }else{
+        divResultado.innerHTML = `A empresa ${nomeEmpresa} está fora da sua lista`
+    }
+    }
+</script>
