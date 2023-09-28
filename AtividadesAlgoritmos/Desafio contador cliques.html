@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio contador de cliques</title>
+</head>
+<body>
+    <button onclick="contaClick()">Clique em mim</button>
+
+    Cliques <span id="spanNumero">0</span>
+</body>
+</html>
+<script>
+    function contaClick(){ 
+        var click = Number(spanNumero.innerHTML);
+        click += 1;
+        spanNumero.innerHTML = click;
+    }
+</script>

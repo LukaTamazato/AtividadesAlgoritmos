@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4VG</title>
+</head>
+<body>
+    Quantos pixels deseja mover o bart?
+    <input type="number" id="iptMovimento">
+    <button onclick="moverEsquerda()">Mover para esquerda</button>
+    <button onclick="moverDireita()">Mover para direita</button><br>
+    <img id="imgBart"  src="https://w7.pngwing.com/pngs/779/2/png-transparent-bart-simpson-lisa-simpson-skateboarding-leaving-photography-cartoon-vehicle.png"
+    style="width: 300px;" >
+</body>
+</html>
+<script>
+    var movimento = 0;
+    function moverEsquerda(){
+        movimento += Number(iptMovimento);
+        imgBart.style += `margin-left: ${movimento} px;`
+    }
+    function moverDireita(){
+        movimento += Number(iptMovimento);
+        imgBart.style += `margin-right: ${movimento} px;`
+    }
+</script>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3VG</title>
+</head>
+<body>
+   <div id="divExibicao" style="color:blue">Total guardado no cofrinho: R$<u>0</u>
+   <br>Depósitos efetuados: <u>0</u>
+   <br>Retiradas efetuadas: <u>0</u></div> 
+
+   <button onclick="depositar05()">Depositar 0,50</button>
+   <button onclick="depositar2()">Depositar 2,00</button>
+   <button onclick="retirar05()">Retirar 0,50</button><br>
+   Quanto deseja retirar da conta?
+   <input type="number" id="inpValorRetirada">
+   <button onclick="retirar()">Retirar</button>
+
+</body>
+</html>
+<script>
+    var valor = 0;
+    var depositos = 0;
+    var retiradas = 0;
+
+    function depositar05(){
+        valor += 0.5;
+        depositos += 1;
+
+        divExibicao.innerHTML = `Total guardado no cofrinho: R$<u>${valor}</u>
+   <br>Depósitos efetuados: <u>${depositos}</u>
+   <br>Retiradas efetuadas: <u>${retiradas}</u></div> `
+    }
+    function depositar2(){
+        valor += 2;
+        depositos += 1;
+
+        divExibicao.innerHTML = `Total guardado no cofrinho: R$<u>${valor}</u>
+   <br>Depósitos efetuados: <u>${depositos}</u>
+   <br>Retiradas efetuadas: <u>${retiradas}</u></div> `
+    }
+    function retirar05(){
+        valor -= 0.5;
+        retiradas += 1;
+
+        divExibicao.innerHTML = `Total guardado no cofrinho: R$<u>${valor}</u>
+   <br>Depósitos efetuados: <u>${depositos}</u>
+   <br>Retiradas efetuadas: <u>${retiradas}</u></div> `
+    }
+    function retirar(){
+        var valorRetirada = Number(inpValorRetirada.value);
+        valor -= valorRetirada;
+        retiradas += 1;
+
+        divExibicao.innerHTML = `Total guardado no cofrinho: R$<u>${valor}</u>
+   <br>Depósitos efetuados: <u>${depositos}</u>
+   <br>Retiradas efetuadas: <u>${retiradas}</u></div> `
+    }
+    
+
+</script>

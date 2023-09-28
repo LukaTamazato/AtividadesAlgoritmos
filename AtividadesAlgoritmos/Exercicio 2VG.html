@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2VG</title>
+</head>
+<body>
+    Qual seu salario?
+    <input type="number" id="iptSalario"><br>
+    <div id="divResultado"></div>
+    <button onclick="exibeSalario()">Confirmar salário</button>
+    <button onclick="pagarConta100()">Pagar conta de 100</button>
+    <button onclick="pagarConta500()">Pagar conta de 500</button>
+    <button onclick="ganharLoteria()">Ganhar 2000 na loteria</button>
+
+</body>
+</html>
+<script>
+    var salario = 0;
+    function exibeSalario(){
+        salario = Number(iptSalario.value);
+        divResultado.innerHTML = salario;
+    }
+    function pagarConta100() {
+        salario -= 100;
+        divResultado.innerHTML = salario;
+    }
+    function pagarConta500() {
+        salario -= 500;
+        divResultado.innerHTML = salario;
+    }
+    function ganharLoteria() {
+        salario += 2000;
+        divResultado.innerHTML = salario;
+    }
+
+
+
+</script>

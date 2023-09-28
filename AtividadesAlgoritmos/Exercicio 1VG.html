@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1VG</title>
+</head>
+<body>
+<div id="divImagem">
+    <img width="800px;" src="https://i0.statig.com.br/bancodeimagens/cg/po/uz/cgpouzmv1jtzr3trmbmgx4yyp.jpg" alt="imgFurao"><br>
+</div>
+    <button onclick="aumentarImagem()">Aumentar a largura</button>
+    <button onclick="reduzirImagem()">Reduzir a largura</button>
+</body>
+</html>
+<script>
+    var largura = 800;
+    function aumentarImagem(){
+        largura += 10 
+       divImagem.innerHTML = `<img width="${largura}px;" src="https://i0.statig.com.br/bancodeimagens/cg/po/uz/cgpouzmv1jtzr3trmbmgx4yyp.jpg" alt="imgFurao"><br>`
+    }
+
+    function reduzirImagem(){
+        largura -= 10 
+       divImagem.innerHTML = `<img width="${largura}px;" src="https://i0.statig.com.br/bancodeimagens/cg/po/uz/cgpouzmv1jtzr3trmbmgx4yyp.jpg" alt="imgFurao"><br>`
+    }
+</script>
