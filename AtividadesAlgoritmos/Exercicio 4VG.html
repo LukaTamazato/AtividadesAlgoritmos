@@ -17,11 +17,11 @@
 <script>
     var movimento = 0;
     function moverEsquerda(){
-        movimento += Number(iptMovimento);
-        imgBart.style += `margin-left: ${movimento} px;`
+        movimento -= Number(iptMovimento.value);
+        imgBart.style.marginLeft = movimento + "px";
     }
     function moverDireita(){
-        movimento += Number(iptMovimento);
-        imgBart.style += `margin-right: ${movimento} px;`
+        movimento += Number(iptMovimento.value);
+        imgBart.style.marginLeft = movimento +"px";
     }
 </script>
