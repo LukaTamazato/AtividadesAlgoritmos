@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4LR</title>
+</head>
+<body>
+    <button onclick="calculaPares()">S2 Pares</button>
+    <div id="divExibicao"></div>
+</body>
+</html>
+<script>
+    function calculaPares(){ 
+    var contador = 1;
+    while (contador <= 100){
+        var contaTxt = contador + "";
+        if (contaTxt.endsWith(0) || contaTxt.endsWith(2) || contaTxt.endsWith(4) || contaTxt.endsWith(6) || contaTxt.endsWith(8)){
+            divExibicao.innerHTML += contaTxt + "<br>";
+        }
+        contador += 1;
+    }
+}
+</script>

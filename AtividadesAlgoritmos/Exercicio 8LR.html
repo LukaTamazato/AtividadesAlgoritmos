@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8LR</title>
+</head>
+<body>
+    Insira um numero(entre 0 e 200):
+    <input type="text" id="iptNumero">
+    <button onclick="calcularMultiplos()">Viva o 7!</button>
+    <div id="divResult"></div>
+</body>
+</html>
+<script>
+    function calcularMultiplos(){ 
+    var contador = 1;
+    var numero = 0;
+    var valor = iptNumero.value;
+    while (contador <= valor){
+        numero += 7;
+        divResult.innerHTML += `${numero} <br>`;
+        contador += 1;
+    }
+}
+</script>

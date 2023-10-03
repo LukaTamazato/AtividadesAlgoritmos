@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2LR</title>
+</head>
+<body>
+    Insira a frase que deseja exibir:
+    <input type="text" id="iptFrase"><br>
+
+    <button onclick="escreverNaTela()">Diga algo sobre a matéria de Algoritmos</button>
+    <div id="divExibicao"></div>
+
+</body>
+</html>
+<script>
+    function escreverNaTela(){
+        var frase = iptFrase.value;
+        var contador = 1;
+
+        while (contador<=7){
+            divExibicao.innerHTML += frase + "<br>";
+            contador += 1;
+        }
+    }
+</script>

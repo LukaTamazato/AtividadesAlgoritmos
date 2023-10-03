@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10LR</title>
+</head>
+<body>
+    Insira um valor em que deseja criar o intervalo:
+    <input type="text" id="iptValor">
+    <button onclick="calculaPares()">S2 Pares</button>
+    <div id="divResut"></div>
+</body>
+</html>
+<script>    
+function calculaPares(){ 
+    var contador = 1;
+    var valor = iptValor.value;
+    while (contador <= valor){
+        var contaTxt = contador + "";
+        if (contaTxt.endsWith(0) || contaTxt.endsWith(2) || contaTxt.endsWith(4) || contaTxt.endsWith(6) || contaTxt.endsWith(8)){
+            divResut.innerHTML += contaTxt + "<br>";
+        }
+        contador += 1;
+    }
+}
+</script>

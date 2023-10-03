@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 9LR</title>
+</head>
+<body>
+    Informe um numero:
+    <input type="number" id="iptNumero"><br>
+    Informe uma frase:
+    <input type="text" id="iptFrase"><br>
+    <button onclick="chamaTexto()">Papagaio</button>
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+    var contador = 1;
+    function chamaTexto(){
+    while(contador <= iptNumero.value){
+         alert(iptFrase.value);
+        contador +=1;  
+    }
+}
+</script>

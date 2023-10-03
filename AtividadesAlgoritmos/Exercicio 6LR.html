@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6LR</title>
+</head>
+<body>
+    Qual o nome da pessoa que você mais ama na vida?
+    <input type="text" id="iptNomeAmor"><br>
+    Quanto você  ama esta pessoa em numeros(inteiro)?
+    <input type="number" id="iptQntAmor"><br>
+    <button onclick="calcularAmor()">Expressar amor</button>
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+    var contador = 1;
+    var texto = "";
+    function calcularAmor(){
+    while(contador <= iptQntAmor.value){
+        texto += iptNomeAmor.value + "<br>";
+        contador +=1;  
+    }
+    divResultado.innerHTML = texto
+}
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7LR</title>
+</head>
+<body>
+    Insira um numero(entre 20 e 100):
+    <input type="text" id="iptNumero">
+    <button onclick="calcularMultiplos()">Adoro múltiplos de 5</button>
+    <div id="divResult"></div>
+</body>
+</html>
+<script>
+    function calcularMultiplos(){ 
+    var contador = 1;
+    var valor = iptNumero.value;
+    while (contador <= valor){
+        var contaTxt = contador + "";
+        if (contaTxt.endsWith(0) || contaTxt.endsWith(5)){
+            divResult.innerHTML += contaTxt + "<br>";
+        }
+        contador += 1;
+    }
+}
+</script>
