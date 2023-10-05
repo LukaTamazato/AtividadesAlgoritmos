@@ -6,18 +6,23 @@
     <title>Exercicio 10LR</title>
 </head>
 <body>
-    Insira um valor em que deseja criar o intervalo:
-    <input type="text" id="iptValor">
+    Insira um valor em que começa o intervalo:
+    <input type="text" id="iptValorInicio"> <br>
+    Insira um valor em que termina o intervalo:
+    <input type="text" id="iptValorFinal"> <br>
     <button onclick="calculaPares()">S2 Pares</button>
     <div id="divResut"></div>
 </body>
 </html>
 <script>    
 function calculaPares(){ 
-    var contador = 1;
-    var valor = iptValor.value;
-    while (contador <= valor){
-        var contaTxt = contador + "";
+    var valorInicio = Number(iptValorInicio.value);
+    var valorFinal = Number(iptValorFinal.value);
+    var contador = valorInicio;
+    divResut.innerHTML  = "";
+    var contaTxt = "";
+    while (contador <= valorFinal){
+        contaTxt = contador + "";
         if (contaTxt.endsWith(0) || contaTxt.endsWith(2) || contaTxt.endsWith(4) || contaTxt.endsWith(6) || contaTxt.endsWith(8)){
             divResut.innerHTML += contaTxt + "<br>";
         }

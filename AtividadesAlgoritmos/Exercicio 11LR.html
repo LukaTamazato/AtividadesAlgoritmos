@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11LR</title>
+</head>
+<body>
+    Insira quantas voltas o carro dará na corrida:
+    <input type="number" id="iptNumeroVoltas">
+    <button onclick="calcularVoltas()">Iniciar corrida!</button>
+    <div id="divExibicao"></div>
+</body>
+</html>
+<script>
+function calcularVoltas(){
+    var numeroVoltas = Number(iptNumeroVoltas.value);
+    var voltaAtual = 1;
+    divExibicao.innerHTML = "";
+        while (voltaAtual <= numeroVoltas){
+        divExibicao.innerHTML += `Carro dando ${voltaAtual}ª volta <br>`;
+        if (voltaAtual == numeroVoltas){
+            divExibicao.innerHTML += `Corrida finalizada!`;
+        }
+        voltaAtual += 1;
+    }
+}
+</script>

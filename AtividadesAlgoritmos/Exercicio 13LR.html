@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13LR</title>
+</head>
+<body>
+    Informe quantos dias de musculação vc tem no mês:
+    <input type="number" id="iptIntervaloMusculacao"><br>
+    <button onclick="calcularRotina()">Exibir rotina mensal</button>
+    <div id="divExibicao"></div>
+</body>
+</html>
+<script>
+    function calcularRotina(){
+        var intervaloMusculacao = Number(iptIntervaloMusculacao.value);
+        var contador = 1;
+        var diasAcademia = 0;
+        divExibicao.innerHTML = "";
+        
+        while (contador <= 30){
+            if(contador == 1 || diasAcademia == contador){
+                diasAcademia =  contador + intervaloMusculacao;
+                divExibicao.innerHTML += `dia ${contador} - Musculação <br>` 
+            } else {
+                divExibicao.innerHTML += `dia ${contador} - Comer, dormir etc <br>`
+            }
+            contador += 1;
+        }
+    }
+</script>

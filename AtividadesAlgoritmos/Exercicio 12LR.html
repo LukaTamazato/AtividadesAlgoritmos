@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12LR</title>
+</head>
+<body>
+    Qual numero deseja ver a tabuada?
+    <select id="iptTabuada">
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    </select><br>
+ 
+    Até que numero quer que a tabuada vá?
+    <input type="number" id="iptFinalTabuada"><br>
+    <button onclick="calcularTabuada()">Ver Tabuada</button>
+    <div id="divResultado"></div>
+</body>
+</html>
+<script>
+    function calcularTabuada(){
+        var tabuada = Number(iptTabuada.value);
+        var finalTabuada = Number(iptFinalTabuada.value);
+        var resultado = 0;
+        var contador = 1;
+        divResultado.innerHTML = "";
+        while(contador <= finalTabuada){
+            resultado = contador * tabuada;
+            if (contador % 2 == 0){
+                divResultado.innerHTML += `<span style="color: blue;"> ${contador} x ${tabuada} = ${resultado} <br></span>`    
+            }
+            else {
+                divResultado.innerHTML += `<span style="color: red;"> ${contador} x ${tabuada} = ${resultado} <br></span>`
+            }
+            contador += 1;
+        }
+    }
+</script>
