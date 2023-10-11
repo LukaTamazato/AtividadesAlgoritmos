@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 19LR</title>
+</head>
+<body>
+    Insira quantas xicaras de café com leite você tomou:
+    <input type="text" id="iptQtdXicara">
+    <button onclick="exibeXicara()">Ver a quantidade</button>
+    <div id="divExibicao"></div>
+
+</body>
+</html>
+<script>
+    function exibeXicara(){
+        var qntXicara = Number(iptQtdXicara.value);
+        var contador = 1;
+        var contador1 = 1;
+        divExibicao.innerHTML = "";
+        var cafe = qntXicara * 2;
+
+            while (contador<=qntXicara){
+                divExibicao.innerHTML += `<img style="width: 200px;" src="https://img.freepik.com/fotos-premium/colher-com-leite-condensado-pingando-isolada-na-superficie-branca_185193-27062.jpg">`
+                contador +=1;
+            } 
+            while (contador1<=cafe){
+                divExibicao.innerHTML += `<img style="width: 200px;" src="https://blog.coffeeandjoy.com.br/wp-content/uploads/2020/07/coffeeandjoy_illustrac%CC%A7a%CC%83o-brigadeiro_de_cafe.png">`
+                contador1 +=1;
+            } 
+    }       
+</script>

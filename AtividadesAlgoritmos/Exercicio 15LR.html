@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 15LR</title>
+</head>
+<body>
+    Insira a quantidade de elefantes:
+    <input type="text" id="iptQntElefante"><br>
+    <button onclick="calcularElefante()">Atazanar a médium</button>
+    <div id="divExibicao"></div>
+</body>
+</html>
+<script>
+    function calcularElefante(){
+        var contador = 2;
+        var rodadas = 1;
+        var maximo = Number(iptQntElefante.value)
+        var frase = '';
+
+        while (contador<=maximo){
+            while (rodadas<=contador){
+                frase += "incomodam, ";
+                rodadas += 1;
+            }
+            divExibicao.innerHTML +=`
+            1 elefante incomoda muita gente! <br>   
+            ${contador} elefantes, ${frase} muito mais!<br>`
+            contador += 1;
+        }
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 18LR</title>
+</head>
+<body>
+    Quantas latas de coca-cola você já tomou?
+    <input type="text" id="iptQntLata">
+    <button onclick="exibelata()">Ver a quantidade</button>
+    <div id="divExibicao"></div>
+    
+
+</body>
+</html>
+<script>
+    function exibelata(){
+        var qntLata = Number(iptQntLata.value);
+        var contador = 1;
+        divExibicao.innerHTML = ""; 
+
+            while (contador<=qntLata){
+                divExibicao.innerHTML += `<img style="width: 200px;" src="https://giassi.vtexassets.com/arquivos/ids/644060-800-450?v=638211560666570000&width=800&height=450&aspect=true">`
+                contador +=1;
+            } 
+    }       
+</script>
