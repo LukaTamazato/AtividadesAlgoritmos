@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 23LR</title>
+</head>
+<body>
+    Insira o limite inferior da amostragem:
+    <input type="number" id="iptLimiteInferior"><br>
+    Insira o limite superior da amostragem:
+    <input type="number" id="iptLimiteSuperior"><br>
+    Insira um numero para testar a divisibilidade(Entre 3 e 10)
+    <input type="number" id="iptDivisibilidade"><br>
+    <button onclick="testarDivisibilidade()">Contar</button>
+    <div id="divExibicao"></div>
+
+</body>
+</html>
+<script>
+    function testarDivisibilidade(){
+        var limiteInferior = Number(iptLimiteInferior.value);
+        var limiteSuperior = Number(iptLimiteSuperior.value);
+        var divisibilidade = Number(iptDivisibilidade);
+
+        if(limiteInferior => 1){
+        if(limiteSuperior < 100 || limiteSuperior > limiteInferior){
+        if(divisibilidade>2 && divisibilidade<11){
+
+
+        while( limiteInferior => limiteSuperior){
+        divExibicao.innerHTML = ``;
+        }
+        }else{
+        alert("Seu limite inferior deve ser 1 ou mais");
+        }
+        }else{
+        alert("Seu limite superior deve ser menor doque 100 e maior que o limite inferior")
+        }
+        }else{
+        alert("Sua divisibilidade tem que ser entre 3 e 10")
+        }
+    
+
+
+        
+        
+        
+        }
+</script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 20LR</title>
+    <title>Exercicio 21LR</title>
 </head>
 <body>
     Quantos depositos você fez no banco?
@@ -24,6 +24,9 @@
 
         while (contador <= qtdDeposito){
             valorTotal += valorDeposito; 
+            if(contador % 3 == 0){
+                valorTotal += valorTotal*0.01;
+            }
             divExibicao.innerHTML += `${contador}º Mês: ${valorTotal}<br>`
             if (contador == qtdDeposito){
                 divExibicao.innerHTML += `Total guardado: ${valorTotal}<br>` 

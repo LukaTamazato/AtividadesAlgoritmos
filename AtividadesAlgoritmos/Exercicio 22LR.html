@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 20LR</title>
+    <title>Exercicio 22LR</title>
 </head>
 <body>
     Quantos depositos você fez no banco?
@@ -12,6 +12,7 @@
     <input type="number" id="iptValorDeposito"><br>
    <button onclick="acompanharDeposito()">Acompanhar grana</button>
    <div id="divExibicao"></div> 
+   
 </body>
 </html>
 <script>
@@ -20,11 +21,17 @@
         var valorDeposito = Number(iptValorDeposito.value);
         var valorTotal = 0;
         var contador = 1;
+        var estrela = "";
         divExibicao.innerHTML = "";
 
         while (contador <= qtdDeposito){
             valorTotal += valorDeposito; 
-            divExibicao.innerHTML += `${contador}º Mês: ${valorTotal}<br>`
+            if(contador % 3 == 0){
+                valorTotal += valorTotal*0.01;
+                estrela = '<img style="width: 13px;" src="https://imagepng.org/estrela/estrela-4/" >';
+            }
+            divExibicao.innerHTML += `${contador}º Mês: ${valorTotal} ${estrela} <br>`
+            estrela = "";
             if (contador == qtdDeposito){
                 divExibicao.innerHTML += `Total guardado: ${valorTotal}<br>` 
             }
