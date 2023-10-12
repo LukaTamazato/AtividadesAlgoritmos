@@ -21,30 +21,28 @@
     function testarDivisibilidade(){
         var limiteInferior = Number(iptLimiteInferior.value);
         var limiteSuperior = Number(iptLimiteSuperior.value);
-        var divisibilidade = Number(iptDivisibilidade);
+        var divisibilidade = Number(iptDivisibilidade.value);
+        var contador = limiteInferior;
+        var divisor = 0;
 
-        if(limiteInferior => 1){
-        if(limiteSuperior < 100 || limiteSuperior > limiteInferior){
-        if(divisibilidade>2 && divisibilidade<11){
+        if(limiteInferior > 1){
+        if(limiteSuperior < 100 && limiteSuperior > limiteInferior){
+        if(divisibilidade >= 3 && divisibilidade <= 10){
+            while(contador <= limiteSuperior){
+            if (contador % divisibilidade == 0){
+                divExibicao.innerHTML += `${contador}, `;
+            }
+            }
 
-
-        while( limiteInferior => limiteSuperior){
-        divExibicao.innerHTML = ``;
-        }
-        }else{
-        alert("Seu limite inferior deve ser 1 ou mais");
-        }
-        }else{
-        alert("Seu limite superior deve ser menor doque 100 e maior que o limite inferior")
-        }
         }else{
         alert("Sua divisibilidade tem que ser entre 3 e 10")
         }
-    
+        }else{
+        alert("Seu limite superior deve ser menor que 100 e maior que o limite inferior e menos que 100")
+        }
+        }else{
+        alert("Seu limite inferior deve ser 2 ou mais");
+        }
 
-
-        
-        
-        
         }
 </script>
