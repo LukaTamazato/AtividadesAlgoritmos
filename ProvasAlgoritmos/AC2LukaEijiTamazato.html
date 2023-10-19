@@ -54,9 +54,9 @@
                             Sobra de Chakra: ${chakraFinal}<br>`;
                             //Achei o seu jeito de fazer o chakra final mais complexo doq esse hehe
 
-                            if(chakraFinal > 1000 || qtdClone > 50  ||((chakraFinal/chakra)*100) >= 20){
+                            if(chakraFinal > 1000 || qtdClone > 50  && ((chakraFinal/chakra)*100) >= 20){
                                 divAnaliseClone.innerHTML += 'PROVAVELMENTE VOCÊ VAI GANHAR'
-                            }else if(chakraFinal > 500 ||(qtdClone >= 20 && qtdClone <= 50)||((chakraFinal/chakra)*100) >= 10){
+                            }else if(chakraFinal > 500 ||(qtdClone >= 20 && qtdClone <= 50)&&((chakraFinal/chakra)*100) >= 10){
                                 divAnaliseClone.innerHTML += 'A LUTA VAI SER MUITO BOA'
                             }else{
                                 divAnaliseClone.innerHTML += 'TORÇA PARA O ADVERSÁRIO SER FRAQUINHO'
