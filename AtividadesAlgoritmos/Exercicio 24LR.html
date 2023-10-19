@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 24LR</title>
+</head>
+<body>
+    Insira um numero para verificar os numeros divisiveis(entre 0 e 100):
+    <input type="number" id="iptDivisivel">
+    <button onclick="calcularDivisiveis()">Ver Divisores</button>
+    <div id="divDivisores"></div>
+</body>
+</html>
+<script>
+    function calcularDivisiveis(){
+    var divisivel = Number(iptDivisivel.value);
+    var contador = 0;
+    divDivisores.innerHTML = "";
+
+    while(contador <= divisivel){
+        
+        if( divisivel % contador  == 0){
+            divDivisores.innerHTML +=`${contador}<br>`;
+        }
+        contador +=1;
+    }
+}
+</script>

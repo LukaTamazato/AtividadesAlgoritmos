@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC2 Luka Eiji Tamazato</title>
+</head>
+<body>
+    Insira quantos pontos de chakara possui:
+    <input type="number" id="iptChakra"><br>
+    Insira quantos clones deseja fazer:
+    <input type="number" id="iptQtdClone"><br>
+    Quantos clone devem ser inseridos por linha?
+    <input type="number" id="iptCloneLinha"><br>
+    <button onclick="inserirClone()">Criar Clones</button>
+    <div id="divClone"></div>
+    <div id="divAnaliseClone"></div>
+    <!-- <img style="width: 100px;" src="https://i.pinimg.com/originals/74/45/6c/74456c2bd47666329b9dee5dcad4ece7.png" alt="Pelo amor de deus né professor naruto classico muito superior"> -->
+</body>
+</html>
+<script>
+    function inserirClone(){
+        var chakra = Number(iptChakra.value);
+        var qtdClone = Number(iptQtdClone.value);
+        var clonePorLinha = Number(iptCloneLinha.value);
+        var cloneTela = 0;
+        var chakraFinal = chakra;
+        divClone.innerHTML = "";
+        divAnaliseClone.innerHTML = "";
+
+        if (chakra >= 20 && chakra <= 5000){
+            if (qtdClone >= 0 && qtdClone <= 250){
+                if(clonePorLinha >0){
+                    
+                    if(chakra >= (qtdClone *20)){
+                    // console.log("Tem");
+                    // }else{
+                    // console.log("Não tem");
+                    while(cloneTela < qtdClone){
+
+                        if (cloneTela % clonePorLinha == 0){
+                            divClone.innerHTML += `<br>`
+                        }
+                            divClone.innerHTML += `<img style="width: 100px;" src="https://i.pinimg.com/originals/74/45/6c/74456c2bd47666329b9dee5dcad4ece7.png" alt="Pelo amor de deus né professor naruto classico muito superior">`;                        
+                            chakraFinal -= 20;
+                        cloneTela +=1;
+                    }
+                            divAnaliseClone.innerHTML += `ANÁLISE DA GERAÇÃO DE CLONES<br>
+
+                            Chakra Inicial: ${chakra} <br> 
+
+                            Quantidade de Clones: ${qtdClone}<br>
+
+                            Sobra de Chakra: ${chakraFinal}<br>`;
+                            //Achei o seu jeito de fazer o chakra final mais complexo doq esse hehe
+
+                            if(chakraFinal > 1000 || qtdClone > 50  ||((chakraFinal/chakra)*100) >= 20){
+                                divAnaliseClone.innerHTML += 'PROVAVELMENTE VOCÊ VAI GANHAR'
+                            }else if(chakraFinal > 500 ||(qtdClone >= 20 && qtdClone <= 50)||((chakraFinal/chakra)*100) >= 10){
+                                divAnaliseClone.innerHTML += 'A LUTA VAI SER MUITO BOA'
+                            }else{
+                                divAnaliseClone.innerHTML += 'TORÇA PARA O ADVERSÁRIO SER FRAQUINHO'
+                            }
+
+                    }else{
+                    alert('ERRO NA ENTRADA DE DADOS - Quantidade de chakra não é o suficiente para quantidade de clones')    
+                    }
+                }else{
+                alert('ERRO NA ENTRADA DE DADOS - Quantidade de clones por linha tem que ser maior que 0');
+                }
+            }else{
+            alert('ERRO NA ENTRADA DE DADOS – Quantidade de clones tem que ser entre 0 e 250.')
+            }
+        }else{
+            alert('ERRO NA ENTRADA DE DADOS – Chakra tem que ser entre 20 e 5.000.')
+        }
+    }
+</script>
