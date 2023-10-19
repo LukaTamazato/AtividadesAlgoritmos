@@ -16,19 +16,33 @@
     function calcularDivisiveis(){
     var divisivel = Number(iptDivisivel.value);
     var contador = 1;
+    var totalMultiplo = 0;
+    var multiplo = 0;
+    
     divDivisores.innerHTML = "";
 
     while(contador <= divisivel){
         
         if( divisivel % contador  == 0){
             divDivisores.innerHTML +=`${contador}<br>`;
-            if (contador % 1 == 0 && contador % contador == 0 && !(contador % divisivel == 0)){
+            var rodada = 1;
+            totalMultiplo = 0;
+            while (rodada <= contador){
+                
+                multiplo = contador % rodada;
+                console.log(multiplo)
+                if(multiplo == 0){
+                    totalMultiplo += 1;
+                }
+                rodada += 1;
+                
+            }
+            if(totalMultiplo == 2){
                 divDivisores.innerHTML +=`O numero ${contador} é primo<br>`;
-
             }
         }
-        contador +=1;
+            contador +=1;
+        }
     }
     
-}
 </script>
