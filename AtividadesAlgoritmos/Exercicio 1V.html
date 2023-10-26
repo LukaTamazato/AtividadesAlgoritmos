@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1V</title>
+</head>
+<body>
+    Qual fruta deseja pesquisar?
+    <input type="text" id="iptFrutaPesquisada"><br>
+    <button onclick="ProcurarFruta()">Pesquisar</button>
+    <div id="divFruta"></div>
+</body>
+</html>
+<script>
+    var listaFruta = ['maça','banana','pera','laranja','pessêgo'];
+    function ProcurarFruta(){
+    var frutaPesquisada = iptFrutaPesquisada.value  
+
+        for(frutaAtual = 0;frutaAtual<=listaFruta.length;frutaAtual+=1){
+            if(listaFruta[frutaAtual]==frutaPesquisada){
+                divFruta.innerHTML = `A fruta ${frutaPesquisada} existe na lista.<br>`
+                break
+            }else{
+                divFruta.innerHTML = `Não existe a fruta ${frutaPesquisada} na lista.<br>`
+            }
+        }
+
+    }
+</script>

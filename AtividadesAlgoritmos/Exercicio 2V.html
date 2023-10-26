@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2V</title>
+</head>
+<body>
+    Destino da viagem:
+    <input type="text" id="iptDestino">
+    <button onclick="AdicionarDestino()">Adicionar</button><br>
+    <button onclick="buscaPosicao1()">Primeira Viagem</button><br>
+    <button onclick="buscaPosicao3()">Terceira viagem</button><br>
+    <button onclick="buscaUltimaPosicao()">Ultima viagem</button><br>
+    <div id="divResposta"></div>
+</body>
+</html>
+<script>
+    var listaDestinos=[];
+    function AdicionarDestino(){
+        var Destino = iptDestino.value;
+        listaDestinos.push(Destino);
+    }
+    function buscaPosicao1(){
+        if(listaDestinos[0]==''){
+            divResposta.innerHTML = "Ainda não viajou"
+        }else{
+            divResposta.innerHTML = listaDestinos[0]
+        }
+    }
+    function buscaPosicao3(){
+        if(listaDestinos[2]==''){
+            divResposta.innerHTML = "Ainda fez a terceira viagem"
+        }else{
+            divResposta.innerHTML = listaDestinos[2]
+        }
+    }
+    function buscaUltimaPosicao(){
+        if(listaDestinos)
+    }
+</script>
