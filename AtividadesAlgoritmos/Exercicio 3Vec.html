@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 3V</title>
+</head>
+<body>
+    Insira aqui os bairos que você morou<br>
+    <input type="text" id="iptBairro" placeholder="Villa Formosa"><br>
+    <button onclick="cadastrarBairro()">Cadastrar bairro</button><br>
+    Qual posição do bairro que deseja buscar<br>
+    <input type="number" id="iptNumeroBusca" placeholder="1"><br>
+    <button onclick="cadastrarNumero()">Relembrar moradia</button><br>
+    <div id="divExibicao"></div>
+
+</body>
+</html>
+<script>
+    var bairrosMorados = [];
+    function cadastrarBairro (){
+        bairrosMorados.push(iptBairro.value)
+    }
+    function cadastrarNumero(){
+        var numeroBusca = Number(iptNumeroBusca.value);
+        if(numeroBusca > bairrosMorados.length){
+            divExibicao.innerHTML = `Você ainda não morou num ${numeroBusca}º bairro!`
+        }else{
+            divExibicao.innerHTML = `${numeroBusca}º - ${bairrosMorados[numeroBusca-1]}`
+        }
+
+    }
+</script>

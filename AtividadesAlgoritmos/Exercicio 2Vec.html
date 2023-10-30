@@ -22,20 +22,24 @@
         listaDestinos.push(Destino);
     }
     function buscaPosicao1(){
-        if(listaDestinos[0]==''){
-            divResposta.innerHTML = "Ainda não viajou"
+        if(listaDestinos.length == 0){
+            divResposta.innerHTML = "Ainda não viajou";
         }else{
-            divResposta.innerHTML = listaDestinos[0]
+            divResposta.innerHTML = listaDestinos[0];
         }
     }
     function buscaPosicao3(){
-        if(listaDestinos[2]==''){
-            divResposta.innerHTML = "Ainda fez a terceira viagem"
+        if(listaDestinos.length < 3){
+            divResposta.innerHTML = "Ainda fez a terceira viagem";
         }else{
-            divResposta.innerHTML = listaDestinos[2]
+            divResposta.innerHTML = listaDestinos[2];
         }
     }
     function buscaUltimaPosicao(){
-        if(listaDestinos)
+        if(listaDestinos.length == 0){
+            divResposta.innerHTML = "Ainda não viajou";
+        }else{
+            divResposta.innerHTML = listaDestinos[listaDestinos.length-1];
+        }
     }
 </script>
