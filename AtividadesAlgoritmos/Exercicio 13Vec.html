@@ -10,21 +10,46 @@
         <option value="vitoria">Vitória</option>
         <option value="empate">Empate</option>
         <option value="derrota">Derrota</option>
-    </select>
-    <button onclick="insereExibe()">Registrar jogo</button>
+    </select><br>
+    <button onclick="insereExibe()">Registrar jogo</button><br>
+    Indique qual jogo deseja saber o resultado
+    <input onclick="exibeResultadoJogo()" type="text" id="iptConsulta">
     <div id="divExibicao"></div>
+    <div id="divResultado"></div>
 </body>
 </html>
 <script>
     var tabela = [];
-    var resultado = iptResultado.value;
     function insereExibe(){
+        var resultado = iptResultado.value;
         var vitoria = 0;
         var empate = 0;
         var derrota = 0;
         tabela.push(resultado);
         for(var contador=0;contador<=tabela.length;contador+=1){
-            
+            if(tabela[contador] == 'vitoria'){
+                vitoria += 1;
+            }else if(tabela[contador] == 'derrota'){
+                derrota += 1;
+            }else if(tabela[contador] == 'empate'){
+                empate +=1;
+            }       
+        }
+            var total = (vitoria*3)+(derrota*0)+empate;
+                divExibicao.innerHTML = `O time teve: ${vitoria} vitórias, ${empate} empates, ${derrota} derrotas <br>
+                Pontuação total: ${total} pontos <br>
+                Aproveitamento: ${(total/3*tabela.length)*100}% <br>`
+
+    }
+    function exibeResultadoJogo(){
+        var consulta = Number(iptConsulta.value)
+        for (var buscaResultado=0; buscaResultado<=tabela.length; buscaResultado +=1){
+            if(consulta == buscaResultado){
+                divResultado.innerHTML = `No ${consulta}º jogo, o time ${tabela[buscaResultado-1]}<br>`;
+                break;
+            }else{
+                divResultado.innerHTML = `Não foi cadastrado um ${consulta}º jogo `
+            }
         }
     }
 </script>
