@@ -10,6 +10,21 @@
     <input type="text" id="iptCadastro"><br>
     <button onclick="cadastrarFilme()">Cadastrar filme</button><br>
     <button onclick="exibirFavorito()">Ver Favoritos</button>
-
+    <div id="divExibicao"></div>
+    <div id="divRelatorio"></div>
 </body>
 </html>
+<script>
+    var filme = [];
+    function cadastrarFilme(){
+       filme.push(iptCadastro.value);
+    }
+    function exibirFavorito(){
+    for (var ordemFilme = 0; ordemFilme<filme.length;ordemFilme+=1){
+        divExibicao.innerHTML +=`${filme[ordemFilme]} <br>`; 
+    }
+        divRelatorio.innerHTML += `Total ${filme.length}<br>`;
+        divRelatorio.innerHTML += ` O filme mais que gosta é ${filme[0]}.<br>
+                                    E desses, o que menos gosta é ${filme[filme.length-1]} `
+    }
+</script>

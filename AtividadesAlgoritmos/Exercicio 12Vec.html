@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12V</title>
+</head>
+<body>
+    Insira o nome de um dos seus filhos
+    <input type="text" id="iptNomeFilho"><br>
+    <button onclick="cadastrarFilho()">Cadastrar</button><br>
+    <button onclick="exibirCustoEscola()">Atualizar Família</button>
+    <div id="divExibicao"></div>
+</body>
+</html>
+<script>
+    var filhos = [];
+    function cadastrarFilho(){
+        var NomeFilho = iptNomeFilho.value;
+        var registro = 0;
+        for(var consulta=0; consulta<=filhos.length; consulta+=1){
+            if(NomeFilho == filhos[consulta]){
+                registro += 1;
+                break;
+            }
+        }
+        if(registro == 0){
+                filhos.push(NomeFilho);
+                registro = 0;
+        }else{
+            alert("Não pode mais de 1 filho com o mesmo nome!");  
+        }
+    }
+    function exibirCustoEscola(){
+        divExibicao.innerHTML = `Você tem ${filhos.length} filhos <br>
+            Seu custo mensal será aproximadamente R$ ${filhos.length * 3000} se colocá-los em escola particular<br>
+            ou R$ ${filhos.length * 1500} se eles estudarem em escola pública. 
+            `;
+    }
+    
+</script>
