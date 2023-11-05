@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercicio 15V</title>
 </head>
+
 <body>
-    
-</body>
+    Nome do produto:
+    <input type="text" id="iptNome"><br>
+    Preço de compra:
+    <input type="text" id="iptPreco"><br>
+    <button onclick="cadastroNomePreco()">Cadastrar</button><br>
+    <button onclick="exibeEstoque()">Relatório de estoque</button>
+    <div id="divTotalProdutos"></div>
+    <div id="divExibicao"></div>
+    <div id="divRelatorio"></div>
+
 </html>
+<script>
+    var nomeProdutos = [];
+    var precoProdutos = [];
+    var precoVenda = [];
+    function cadastroNomePreco() {
+        var nome = iptNome.value;
+        var preco = Number(iptPreco.value);
+        nomeProdutos.push(nome);
+        precoProdutos.push(preco);
+    }
+    function exibeEstoque(){
+        
+        divTotalProdutos.innerHTML = `Total de produtos: ${nomeProdutos.length}`; 
+        for(var prodAtualExibido =0;prodAtualExibido<nomeProdutos.length; prodAtualExibido +=1){
+            precoVenda.push(precoProdutos[prodAtualExibido] * 1.25)
+            divExibicao.innerHTML += ` Produto ${prodAtualExibido+1}: ${nomeProdutos[prodAtualExibido]}<br>
+            Preço de compra: R$ ${precoProdutos[prodAtualExibido]}.
+                Vender por ${precoVenda[prodAtualExibido]}<br>`;
+        }
+        var posicaoDoPonto = [];
+        var posicaoDoPontoB = []
+        var ProdMaisCaro = 0;
+        var ProdMaisBarato = 0;
+        for(var analiseProdCaro =0;analiseProdCaro<precoProdutos.length;analiseProdCaro+=1){
+            precoProdutos[analiseProdCaro] = precoProdutos[analiseProdCaro] + '';
+            posicaoDoPonto.push(precoProdutos[analiseProdCaro].indexOf('.'))
+            Number(precoProdutos[analiseProdCaro]);
+        }
+        if (posicaoDoPonto[analiseProdCaro+1]>posicaoDoPonto[analiseProdCaro]){
+                ProdMaisCaro = posicaoDoPonto[analiseProdCaro+1];
+            }
+            for(var analiseProdBarato =0;analiseProdBarato<precoProdutos.length;analiseProdBarato+=1){
+                precoProdutos[analiseProdBarato] = precoProdutos[analiseProdBarato] + '';
+                posicaoDoPontoB.push(precoProdutos[analiseProdBarato].indexOf('.'))
+                Number(precoProdutos[analiseProdBarato]);
+            }
+        if (posicaoDoPontoB[analiseProdBarato+1]<posicaoDoPontoB[analiseProdBarato]){
+                ProdMaisBarato = posicaoDoPontoB[analiseProdBarato+1];
+            }
+        
+        var somaTotal = 0;
+        for (var soma=1;soma<precoProdutos.length;soma+=2){
+            somaTotal += precoProdutos[soma-1]+precoProdutos[soma];
+        }
+
+        divRelatorio.innerHTML = 
+        `a) O nome do produto mais caro;
+        ${precoProdutos[ProdMaisCaro]}<br>
+        b) O nome do produto mais barato;
+        ${precoProdutos[ProdMaisBarato]}<br>
+        c) A soma dos preços de compra dos produtos;
+        ${somaTotal}<br>
+        d) A média de preço de venda dos produtos.
+        ${somaTotal/precoProdutos.length}<br>`
+  
+    }
+</script>
