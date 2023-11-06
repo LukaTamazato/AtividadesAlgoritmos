@@ -38,40 +38,33 @@
             Preço de compra: R$ ${precoProdutos[prodAtualExibido]}.
                 Vender por ${precoVenda[prodAtualExibido]}<br>`;
         }
-        var posicaoDoPonto = [];
-        var posicaoDoPontoB = []
-        var ProdMaisCaro = 0;
-        var ProdMaisBarato = 0;
-        for(var analiseProdCaro =0;analiseProdCaro<precoProdutos.length;analiseProdCaro+=1){
-            precoProdutos[analiseProdCaro] = precoProdutos[analiseProdCaro] + '';
-            posicaoDoPonto.push(precoProdutos[analiseProdCaro].indexOf('.'))
-            Number(precoProdutos[analiseProdCaro]);
+
+        var ProdMaisCaro = precoProdutos[0];
+        var ProdMaisBarato = precoProdutos[0];
+
+        for(var buscaMaior = 0; buscaMaior<precoProdutos.length;buscaMaior+=1){
+            if(ProdMaisCaro < precoProdutos[buscaMaior]){
+                ProdMaisCaro = nomeProdutos[buscaMaior];
+            }
         }
-        if (posicaoDoPonto[analiseProdCaro+1]>posicaoDoPonto[analiseProdCaro]){
-                ProdMaisCaro = posicaoDoPonto[analiseProdCaro+1];
+        for(var buscaMenor = 0; buscaMenor<precoProdutos.length;buscaMenor+=1){
+            if(ProdMaisBarato >= precoProdutos[buscaMenor]){
+                ProdMaisBarato = nomeProdutos[buscaMenor];
             }
-            for(var analiseProdBarato =0;analiseProdBarato<precoProdutos.length;analiseProdBarato+=1){
-                precoProdutos[analiseProdBarato] = precoProdutos[analiseProdBarato] + '';
-                posicaoDoPontoB.push(precoProdutos[analiseProdBarato].indexOf('.'))
-                Number(precoProdutos[analiseProdBarato]);
-            }
-        if (posicaoDoPontoB[analiseProdBarato+1]<posicaoDoPontoB[analiseProdBarato]){
-                ProdMaisBarato = posicaoDoPontoB[analiseProdBarato+1];
-            }
-        
         var somaTotal = 0;
-        for (var soma=1;soma<precoProdutos.length;soma+=2){
-            somaTotal += precoProdutos[soma-1]+precoProdutos[soma];
+        }
+        for (var soma=0;soma<precoProdutos.length;soma+=1){
+            somaTotal += precoProdutos[soma];
         }
 
         divRelatorio.innerHTML = 
-        `a) O nome do produto mais caro;
-        ${precoProdutos[ProdMaisCaro]}<br>
-        b) O nome do produto mais barato;
-        ${precoProdutos[ProdMaisBarato]}<br>
-        c) A soma dos preços de compra dos produtos;
+        `a) O nome do produto mais caro:
+        ${ProdMaisCaro}<br>
+        b) O nome do produto mais barato:
+        ${ProdMaisBarato}<br>
+        c) A soma dos preços de compra dos produtos:
         ${somaTotal}<br>
-        d) A média de preço de venda dos produtos.
+        d) A média de preço de venda dos produtos:
         ${somaTotal/precoProdutos.length}<br>`
   
     }

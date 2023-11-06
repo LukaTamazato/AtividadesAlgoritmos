@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16V</title>
+</head>
+<body>
+    Digite um número qualquer
+    <input type="text" id="iptNumeroCadastrado">
+    <button onclick="cadastrarNumero()">Analisar histórico</button>
+    <div id="divExibicao"></div>
+
+</body>
+</html>
+<script>
+    var numeros=[];
+    function cadastrarNumero(){
+        var maior = numeros[0]
+        var menor  = numeros[0]
+        divExibicao.innerHTML = '';
+        numeros.push(Number(iptNumeroCadastrado.value))
+        for(var exibeLista = 0; exibeLista<numeros.length;exibeLista+=1){
+            divExibicao.innerHTML += `${exibeLista+1} Número: ${numeros[exibeLista]} <br>`;
+        }
+        for(var buscaMaior = 0; buscaMaior<numeros.length;buscaMaior+=1){
+            if(maior < numeros[buscaMaior]){
+                maior=numeros[buscaMaior];
+            }
+        }
+        for(var buscaMenor = 0; buscaMenor<numeros.length;buscaMenor+=1){
+            if(menor > numeros[buscaMenor]){
+                menor=numeros[buscaMenor];
+            }
+        }
+        divExibicao.innerHTML += ` Maior = ${maior}<br>
+                                   Menor = ${menor}<br>`;
+    }
+</script>
