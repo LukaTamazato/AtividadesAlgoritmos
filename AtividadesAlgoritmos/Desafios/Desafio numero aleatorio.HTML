@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio numero "aleatorio"</title>
+</head>
+<body>
+    <button onclick="GerarNumeroAleatorioAte6()">Gerar numero aleatorio até 6</button>
+    <div id="divNumero"></div>
+</body>
+</html>
+<script>
+    function GerarNumeroAleatorioAte6() {
+        var numero
+        numero = parseInt(Math.random()*10)
+        if (numero>0 && numero<=6){
+            divNumero.innerHTML += `${numero} <br>`;
+        }else{
+            while(true){
+            numero = parseInt(Math.random()*10)
+            if (numero>0 && numero<=6){
+            divNumero.innerHTML += `${numero} <br>`;
+            break;
+            }
+        }
+    }
+    }
+</script>

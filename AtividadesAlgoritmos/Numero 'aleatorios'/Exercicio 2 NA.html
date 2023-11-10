@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2 NA</title>
+</head>
+
+<body>
+    <button onclick="exibirImagemAleatoria()">Sortear Time</button>
+    <div id="divTime"></div>
+</body>
+
+</html>
+<script>
+    function exibirImagemAleatoria() {
+        var imagems = 
+        ['https://zetanmedieval.com/2473-large_default/cruz-dos-templarios-do-escudo-medieval.jpg',
+        'https://www.namegafestas.com.br/media/catalog/product/cache/1/thumbnail/328x486/9df78eab33525d08d6e5fb8d27136e95/e/s/escudo_medieval_redondo.jpg',
+        'https://cdn.awsli.com.br/600x1000/2515/2515067/produto/2341648149578128e30.jpg',
+        'https://lojareidasespadas.com/9904-home_default/escudo-medieval-em-latexmodelo-3-inicio.jpg'];
+        var numeroAleatorio = parseInt(Math.random()*10);
+        if (numeroAleatorio > 3) {
+            while (true) {
+                numeroAleatorio = parseInt(Math.random() * 10)
+                if (numeroAleatorio <= 3) {
+                    divTime.innerHTML = `<img width="150px" src="${imagems[numeroAleatorio]}">`
+                    break;
+                }
+            }
+        }
+    }
+</script>

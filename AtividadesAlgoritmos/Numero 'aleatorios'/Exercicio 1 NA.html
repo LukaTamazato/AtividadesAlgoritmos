@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1 NA</title>
+</head>
+<body>
+    <button onclick="exibeNumeroAleatorio()">Sortear</button>
+    <div id="divNumero"></div>
+</body>
+</html>
+<script>
+    function exibeNumeroAleatorio(){
+        var numero = parseInt(Math.random() * 10)
+            divNumero.innerHTML =` ${numero/10}<br>`; 
+        if(numero > 5){
+            divNumero.innerHTML += 'Eu arredondaria para 1';
+        } else{
+            divNumero.innerHTML += 'Eu arredondaria para 0';
+        }
+    }
+</script>
