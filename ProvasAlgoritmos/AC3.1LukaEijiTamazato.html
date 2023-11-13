@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC3 Luka Eiji Tamazato</title>
+</head>
+<body>
+    Insira o nome do astronauta:
+    <input type="text" id="iptNomeAstronauta"><br>
+    Insira quantidade de dias(min 0):
+    <input type="number" id="iptQtdDia"><br>
+    Insira quantidade de horas(min 0):
+    <input type="number" id="iptQtdHora"><br>
+    Insira quantidade de minutos(min 0):
+    <input type="number" id="iptQtdMin"><br>
+    <button onclick="validaRegistra()">Registrar viagem</button><br>
+    <button onclick="relatorioComparacao()">Relatório de viagens</button>
+    <br>
+    <br>
+    <div id="divRelatorio"></div>
+
+</body>
+</html>
+<script>
+    var tempo = [];
+    var tempoTerra = [];
+    var TempoViagens = [];
+
+    function validaRegistra(){
+        var qtdDia = Number(iptQtdDia.value);
+        var qtdHora = Number(iptQtdHora.value);
+        var qtdMin = Number(iptQtdMin.value);
+        var imagem = "";
+
+        if(qtdDia>0||qtdHora>0||qtdMin>0){
+            tempo.push(qtdMin);
+            tempo.push(qtdHora * 60);
+            tempo.push(qtdDia * 1440);
+        }else{
+            alert("Informe um tempo de viagem válido!");
+        }
+    }
+    function relatorioComparacao(){
+        var minutosTerra = 0;
+        divRelatorio.innerHTML = `Foram registradas ${(tempo.length)/3} viagens, detalhadas a seguir:<br><br>`;
+
+        for(contagemTempoTerra = 0;contagemTempoTerra<tempo.length;contagemTempoTerra += 1){
+                tempoTerra.push(tempo[contagemTempoTerra]*49);
+        }
+
+        for(TempoAstronautAtual = 1; TempoAstronautAtual<=tempo.length ; TempoAstronautAtual+=1){
+
+             minutosTerra  += tempoTerra[TempoAstronautAtual-1]
+             if(TempoAstronautAtual % 3 == 0){
+                TempoViagens.push(minutosTerra)
+                minutosTerra = 0;
+             }
+
+        }
+        for(defineImg = 0;defineImg<=TempoViagens.length;defineImg += 1){
+
+            if(TempoViagens[defineImg]<13){
+                imagem = "Bart Criança"
+            } else if(TempoViagens[defineImg]>13){
+                imagem = "Bart Adolecente"
+            } else if(TempoViagens[defineImg]>30){
+                imagem = "Bart Adulto"
+            } else if(TempoViagens[defineImg]>60&&TempoViagens[defineImg]<100){
+                imagem = "Bart velho"
+            } else {
+                imagem = "Bart cadaver"
+            }
+    
+        for(var comparaAstronauta = 0;comparaAstronauta<tempo.length/3;comparaAstronauta+=1){
+            divRelatorio.innerHTML += `Viagem ${comparaAstronauta+1}:<br>
+            Astronauta ${iptNomeAstronauta.value} ficou fora por pelo menos ${TempoViagens[comparaAstronauta]/525600} anos no tempo da Terra.<br>
+            A criança que nasceu quando ele saiu provavelmente está assim:<br>
+            <img src="${imagem}">
+
+
+                                                                `;
+        }
+    
+    
+    }
+}
+</script>
