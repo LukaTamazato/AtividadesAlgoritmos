@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON - JavaScript Object Notation</title>
+</head>
+<body>
+    <button onclick="exibir()">Exibir dados</button>
+    <div id="divMensagem"></div>
+</body>
+</html>
+<script>
+    function exibir(){
+        var anoAtual = new Date().getFullYear();
+        var pessoa = 
+        {
+            dtNasc: {
+                dia: 21,
+                mes: 10,
+                ano : 2002
+            },
+            altura: 1.70,
+            endereco: {
+                rua: 'Haddock Lobo',
+                numero: 595
+            }
+        }
+        console.log('Pessoa:', pessoa);
+        console.log('Nome:', pessoa.nome);
+        console.log('Endereço:', pessoa.endereco);
+        console.log('Rua:', pessoa.endereco.rua);
+
+        pessoa['nome']= 'Luka';
+        pessoa.sobrenome = 'Tamazato';
+        
+        divMensagem.innerHTML = `Olá ${pessoa.nome} ${pessoa['sobrenome']}, tem ${anoAtual - pessoa.dtNasc.ano},<br>
+        Seu endereço é ${pessoa.endereco.rua}, ${pessoa.endereco.numero}`;
+    }
+
+</script>
